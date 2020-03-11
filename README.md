@@ -15,7 +15,7 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 If that works, all dependencies are installed properly
 
-To generate `yields.csv` and `assignments.csv` run: `mix process_loans`
+To generate `yields.csv` and `assignments.csv` run: `mix process_loans`. The files will be generated in `./reference_data/large` folder
 
 
 ## Learn more about elixir and phoenix:
