@@ -6,8 +6,8 @@ defmodule Covenant.Utils.CSVParser do
 
   def parse(file_path) do
     file_path
-    |> File.stream!
+    |> File.stream!()
     |> CSV.parse_stream()
-    |> Enum.map(&(&1))
+    |> Enum.map(& &1)
   end
 end
