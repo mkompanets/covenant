@@ -1,13 +1,14 @@
 defmodule Covenant.Loan do
   defstruct [:interest_rate, :amount, :id, :default_likelihood, :state]
   alias Covenant.Loan
+  alias Covenant.Utils
 
   def init([interest_rate, amount, id, default_likelihood, state]) do
     %Loan{
-      interest_rate: interest_rate,
-      amount: amount,
+      interest_rate: Utils.to_float(interest_rate),
+      amount: Utils.to_integer(amount),
       id: id,
-      default_likelihood: default_likelihood,
+      default_likelihood: Utils.to_float(default_likelihood),
       state: state
     }
   end

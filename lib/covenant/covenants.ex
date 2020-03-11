@@ -1,11 +1,12 @@
 defmodule Covenant.Covenants do
   defstruct [:facility_id, :max_default_likelihood, :bank_id, :banned_state]
   alias Covenant.Covenants
+  alias Covenant.Utils
 
   def init([facility_id, max_default_likelihood, bank_id, banned_state]) do
     %Covenants{
       facility_id: facility_id,
-      max_default_likelihood: max_default_likelihood,
+      max_default_likelihood: Utils.to_float(max_default_likelihood),
       bank_id: bank_id,
       banned_state: banned_state
     }

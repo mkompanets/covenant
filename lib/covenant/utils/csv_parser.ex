@@ -10,4 +10,8 @@ defmodule Covenant.Utils.CSVParser do
     |> CSV.parse_stream()
     |> Enum.map(& &1)
   end
+
+  def dump_to_iodata(data) do
+    data |> CSV.dump_to_iodata()
+  end
 end

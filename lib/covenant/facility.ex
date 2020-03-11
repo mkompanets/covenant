@@ -1,11 +1,12 @@
 defmodule Covenant.Facility do
   defstruct [:amount, :interest_rate, :id, :bank_id]
   alias Covenant.Facility
+  alias Covenant.Utils
 
   def init([amount, interest_rate, id, bank_id]) do
     %Facility{
-      amount: amount,
-      interest_rate: interest_rate,
+      amount: Utils.to_integer(amount),
+      interest_rate: Utils.to_float(interest_rate),
       id: id,
       bank_id: bank_id
     }
